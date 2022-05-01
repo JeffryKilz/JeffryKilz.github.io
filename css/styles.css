@@ -23,7 +23,7 @@ html {
 #bg {
     /*background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
                 linear-gradient(to top right, #594e87, #58466f, #8c5470, #E05352, #C57A6E, #F59B96, #F27684, #EC586D, #D34052, #C53F4A, #E77A64);*/
-    background: linear-gradient(-45deg, #ffffff,rgb(0, 0, 0),rgb(49, 39, 194), rgb(255, 133, 3));
+    background: linear-gradient(-45deg, #ffffff,rgb(255, 242, 242), rgb(0, 0, 0),rgb(0, 0, 0), rgb(49, 39, 194), rgb(255, 133, 3), rgb(255, 176, 28));
     background-size: 400% 400%;
     animation: gradient 15s ease infinite;
     position: absolute;
@@ -128,7 +128,7 @@ h1 {
     margin-top: 30px;
 }
 .navbar a.active {
-    background-color: rgb(69, 67, 67);
+    background-color: rgb(46, 134, 178);
     color: white;
 }
 .socials ul li {
