@@ -144,6 +144,51 @@ iframe {
         -o-animation: fadeIn linear 2s;
         -ms-animation: fadeIn linear 2s;
 }
+#twitch-embed:before {
+    content: '';
+  z-index: 2;
+  position: absolute;
+  width: 560px;
+  height: 315px;
+  -webkit-box-shadow: 0 0 0 7px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0 0 0 7px rgba(0,0,0,0.75);
+  box-shadow: 0 0 0 10px rgba(0,0,0,0.75);
+/*   box-shadow: 0px 0px 61px 6px rgba(0,0,0,0.68); */
+  pointer-events: none;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  animation: fadeIn linear 2s;
+        -webkit-animation: fadeIn linear 2s;
+        -moz-animation: fadeIn linear 2s;
+        -o-animation: fadeIn linear 2s;
+        -ms-animation: fadeIn linear 2s;
+}
+#twitch-embed {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+    animation: fadeIn linear 2s;
+            -webkit-animation: fadeIn linear 2s;
+            -moz-animation: fadeIn linear 2s;
+            -o-animation: fadeIn linear 2s;
+            -ms-animation: fadeIn linear 2s;
+}
+#twitch-chat-embed {
+    position: right;
+    width: 100%;
+    height: 100%;
+
+    animation: fadeIn linear 2s;
+            -webkit-animation: fadeIn linear 2s;
+            -moz-animation: fadeIn linear 2s;
+            -o-animation: fadeIn linear 2s;
+            -ms-animation: fadeIn linear 2s;
+}
 </style>
 <html lang="en" dir="ltr">
   <link rel="shortcut icon" type="images/jpg" href="https://github.com/JeffryKilz/Jeffry_kilz.github.io/blob/main/pictures/Jeffry_kilz.jpg?raw=true">
@@ -153,8 +198,8 @@ iframe {
     <a target="_self" href="/AboutMe" title="About me">About Me</a>
     <a target="_self" href="/Discord">Discord</a>
     <a target="_self" href="/Contact">Contact me</a>
-    <a target="_self" class="active" href="/ytfeed">YtFeed</a>
-    <a target="_self" href="/TwitchFeed">Twitch Feed</a>
+    <a target="_self"  href="/ytfeed">YtFeed</a>
+    <a target="_self" class="active" href="/TwitchFeed">Twitch Feed</a>
     <div id="subscriberCount"></div>
     <img src="pictures/Jeffry_kilz.jpg" style="width:100px;height: 100px;">
   </div>
@@ -167,23 +212,38 @@ iframe {
     <meta content='https://github.com/JeffryKilz/Jeffry_kilz.github.io/blob/main/pictures/Jeffry_kilz.jpg?raw=true' property='og:image'>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script type="text/javascript" src="js/script.js"></script>
+    <script src="https://embed.twitch.tv/embed/v1.js"></script>
     <script src="https://kit.fontawesome.com/f44d8d87b5.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
   </head>
   <body>
     <div id="bg"></div>
-    <div id="Latestvideotext">
-        <ul>Latest Video</ul>
+    <div id="Livetwitchtext"></div>
+        <ul>Watch me Live</ul>
         <br></br>
-    <div class="main">
-        <iframe class="latestvideo" title="Latest Video" width="560" height="315" src="https://www.youtube.com/embed/MyrR8xfDR48" frameborder="0" allowfullscreen></iframe></div>
+        <center><div id="twitch-embed"></div>
+            <iframe id="twitch-chat-embed"
+             src="https://www.twitch.tv/embed/geosjobbydo/chat?parent=geosjobby.xyz"
+              height="500"
+              width="350">
+</iframe>
     <div class="discord">
     <script src='https://cdn.jsdelivr.net/npm/@widgetbot/crate@3' async defer>
       new Crate({
           server: '967474213340446730', // Jeffry_Killz Community Discord Server
           channel: '967474213998964876', // #📃general
       })
+      var embed = new Twitch.Embed("twitch-embed", {
+    width: 560,
+    height: 321,
+    channel: "geosjobbydo",
+    layout: "video",
+     });
+     embed.addEventListener(Twitch.Embed.VIDEO_READY, () => {
+      var player = embed.getPlayer();
+      player.play();
+    });
   </script>
   </div>
   </body>
