@@ -10,8 +10,8 @@ fetch(`https://www.googleapis.com/youtube/v3/channels?part=statistics&id=${Useri
     console.log(data); // Logging the data
     subscriberCount.innerHTML = data["items"][0].statistics.subscriberCount + " Subscribers"; // Displaying the data
   })
-  function a() { // Function to copy the data to clipboard 
-    navigator.clipboard.writeText('Jeffry_Kilz_#1987') // Copying the data to clipboard
+    navigator.clipboard.writeText('Jeffry_Kilz_#1987') // Copying th
+  function a() { // Function to copy the data to clipboard e data to clipboard
     window.alert("Copied 'Jeffry_Kilz_#1987' to Clipboard!"); // Alerting the user
   }
 (window.onload = onLoad), (window.onresize = onResize); // Calling the functions on load and resize
